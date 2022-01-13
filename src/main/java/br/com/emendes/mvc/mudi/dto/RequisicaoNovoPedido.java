@@ -3,10 +3,11 @@ package br.com.emendes.mvc.mudi.dto;
 import javax.validation.constraints.NotBlank;
 
 import br.com.emendes.mvc.mudi.model.Pedido;
+import br.com.emendes.mvc.mudi.model.StatusPedido;
 
 public class RequisicaoNovoPedido {
 	
-	@NotBlank()
+	@NotBlank
 	private String nomeProduto;
 	@NotBlank
 	private String urlProduto;
@@ -44,6 +45,7 @@ public class RequisicaoNovoPedido {
 		pedido.setUrlProduto(urlProduto);
 		pedido.setUrlImage(urlImagem);
 		pedido.setDescricao(descricao);
+		pedido.setStatus(StatusPedido.AGUARDANDO);
 		return pedido;
 	}
 	
